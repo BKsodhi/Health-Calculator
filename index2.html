@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="C:\Users\Bhavnoor kaur\OneDrive\Desktop\baljeet.jpg" alt="BMI bg">
+        </div>
+        <div class="form-container">
+            <h1>Sign In</h1>
+            <div class="form">
+                <form id="signInForm" method="post" action="http://localhost:5000/signin">
+                    <input type="text" class="signin-username" name="username" placeholder="Username">
+                    <input type="password" class="signin-password" name="password" placeholder="Password">
+                    <input type="submit" value="Sign In">
+                </form>
+            </div>
+            <p>Don't have an account? <a href="#" id="toggleSignUp" class="signup-link">Sign Up</a></p>
+        </div>
+        <div class="form-container sign-up" id="signUpContainer">
+            <h1>Sign Up</h1>
+            <div class="form">
+                <form id="signUpForm" method="post" action="http://localhost:5000/signup">
+                    <input type="text" class="signup-username" name="username" placeholder="Username">
+                    <input type="email" class="email" name="email" placeholder="Email">
+                    <input type="password" class="password" name="password" placeholder="Password">
+                    <input type="password" class="confirm-password" placeholder="Confirm Password">
+                    <input type="submit" value="Create Account">
+                </form>
+            </div>
+            <p>Already have an account? <a href="#" id="toggleSignIn" class="signin-link">Sign In</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+         document.getElementById('toggleSignUp').addEventListener('click', function() {
+            document.querySelector('.form-container').style.display = 'none';
+            document.getElementById('signUpContainer').style.display = 'block';
+        });
+
+        document.getElementById('toggleSignIn').addEventListener('click', function() {
+            document.querySelector('.form-container').style.display = 'block';
+            document.getElementById('signUpContainer').style.display = 'none';
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BMI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='consult.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.html" class="toggle-key"><i class="fas fa-home"></i>Home</a></li>
+            <li>
+                <a href="about.html" class="toggle-key"><i class="fas fa-info-circle"></i>About Us</a>
+            </li>
+            <li><a href="contact.html" class="toggle-key"><i class="fas fa-envelope"></i>Contact Us</a></li>
+            <li><a href="consult.html" class="toggle-key"><i class="fas fa-comments"></i>Consultations</a></li>
+            <li><a href="calorie.html" class="toggle-key"><i class="fas fa-calculator"></i>Calorie Count</a></li>
+            <li><a href="learn.html" class="toggle-key"><i class="fas fa-book"></i>Learn More</a></li> <!-- Added Learn More link -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Consultations</h1>
+        <h2>Dieticians:</h2>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='122.jpg') }}">
+            <img src="{{ url_for('static', filename='111.jpg') }}">
+            <img src="{{ url_for('static', filename='133.jpg') }}"><br>
+            
+        <p1><a href="tel:+9198764******">1)Dr.Bhavnoor Kaur: 98764*****</a></p1><br>
+        <p2><a href="tel:+9162834******">2)Dr.Baljeet Singh: 62834*****</a></p2><br>
+        <p3><a href="tel:+9197805******">3)Dr.Bhawna: 97805*****</a></p3>
+        <h2>GYM Experts:</h2>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='1.jpg') }}">
+            <img src="{{ url_for('static', filename='2.jpg') }}">
+
+    </div>
+</body>
+</html>

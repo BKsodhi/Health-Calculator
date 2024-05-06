@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f490f1;
+    background: linear-gradient(270deg, #f490f1 0%, #a08dce 100%);
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    margin-top: 50px;
+    padding-top: 50px; /* home about etc button bottom te container de vich space */
+}
+
+.container {
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.image-container {
+    flex: 1;
+    background-color: #fff;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.form-container {
+    flex: 1;
+    background: #5f2a5e;
+    padding: 100px 40px;
+    text-align: center;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.form-container h1,
+.form-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.form-container .form {
+    width: 340px;
+}
+
+.form-container input {
+    font-size: 16px;
+    display: block;
+    padding: 15px 0px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.form-container input:focus {
+    outline: none;
+}
+
+.form-container input[type="submit"] {
+    background-color: #9a7bf2;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #fec045;
+}
+
+.popup {
+    position: absolute;
+    background: #312222;
+    padding: 50px 100px;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+    box-shadow: 0px 0px 70px -20px rgba(0, 0, 0, 0.5);
+}
+
+.bmi-score {
+    width: 100px;
+    height: 100px;
+    background: #5254ce;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #fff;
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.bmi-text {
+    margin: 20px 0px;
+    background: #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.close-btn {
+    padding: 10px 30px;
+    font-size: 16px;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.privacy-disclaimer {
+    color: white;
+    /* Set text color to white */
+    animation: blink 1s infinite;
+    /* Apply blinking animation */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        /* Start with opacity 1 */
+    }
+
+    50% {
+        opacity: 0;
+        /* Fade out at 50% */
+    }
+
+    100% {
+        opacity: 1;
+        /* Fade in at 100% */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 100%;
+    }
+
+    .image-container {
+        display: none;
+    }
+}
+
+/* Add styles for BMI history and social media share */
+
+.bmi-history {
+    margin-top: 20px;
+}
+
+.bmi-history h3,
+.social-media-share h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.share-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-media-share {
+    text-align: center;
+}
+
+.social-media-share button {
+    width: auto;
+    padding: 8px 20px;
+    margin-bottom: 10px;
+    margin-right: 10px; /* Add some spacing between the buttons */
+    background-color: #9a7bf2;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.social-media-share button:hover {
+    background-color: #fec045;
+}
+
+/* Move the share buttons to the bottom right corner */
+.share-info,
+.social-media-share {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Adjust this value as needed */
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.social-media-share h3 {
+    margin-right: 10px; /* Add some spacing between the text and buttons */
+}
+
+.navigation {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation ul li {
+    display: block;
+    margin-bottom: 50px;
+    padding: 5px 15px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.dropdown-content li {
+    padding: 10px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.unit-toggle label {
+    color: #f7c204; /*Purple color */
+    font-weight: bold;
+    animation: blink 1s infinite; /* Blinking animation */
+}
+
+#save-info-checkbox + label {
+    color: yellow; /* Change to the desired color */
+    margin-top: 4px;
+}
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: flex; /* Make the anchor element a flex container */
+    align-items: center; /* Center the icon vertically */
+    
+    
+}
+
+.navigation ul li a:hover {
+    background-color: #5f2a5e;
+    
+}
+
+.dropdown-content li a {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+.navigation ul li a i {
+    margin-right: 5px; /* Add margin between icon and text */
+}
+.ads-container {
+    display: flex;
+    justify-content: center;
+}
+
+.dummy-ad {
+    width: 300px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 250px;
+    margin: 20px auto;
+}
+
+.container {
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px auto; /* Added margin for centering */
+}
+.navigation {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation ul li {
+    margin: 0;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white; /* Text color of the navigation items */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    background-color:#5f2a5e ; /* Background color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+#save-info-checkbox + label {
+    color: red; /* Change to the desired color */
+}
+  /* Slide animation */
+  .container {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    transition: left 0.3s ease-in-out;
+}
+
+.slide.active {
+    left: 0;
+}
+.navigation {
+    
+    top: 20px;
+    left: 20px;
+    z-index: 999; /* Ensure the navigation is on top of other elements */
+}
+.form-container.sign-up {
+    display: none;
+}
+.signup-link:hover {
+color: blue; /* Change the color on hover */
+text-decoration: underline; /* Underline the link on hover */
+cursor: pointer; /* Change cursor to pointer on hover */
+}
+.signin-link:hover {
+color: blue; /* Change the color on hover */
+text-decoration: underline; /* Underline the link on hover */
+cursor: pointer; /* Change cursor to pointer on hover */
+}
+#adviceSection {
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    display: none;
+    background-color: white; /* Set background color to white */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+#adviceText {
+    font-size: 16px;
+    margin-bottom: 15px; /* Add some space below the advice text */
+}
+#closeAdvice {
+    background-color: #333; /* Match the color of the close button to the result popup */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-weight: bold;
+
+}
+
+#closeAdvice:hover {
+    background-color: #555; /* Darken the background color on hover */
+}
+#adviceHeading {
+    text-align: center; /* Center the text */
+}
+#adviceSection {
+    text-align: center; /* Center the content horizontally */
+}
+
+#adviceSection > * {
+    margin: 10px 0; /* Add space around elements */
+}
+#delete-btn {
+    /* Your existing styles */
+    background-color:#ffb700; /* Change this color to the desired background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#delete-btn:hover {
+    background-color: #9a0800; /* Darker color on hover */
+}

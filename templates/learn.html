@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='learn.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.html" class="toggle-key"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html" class="toggle-key"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="contact.html" class="toggle-key"><i class="fas fa-envelope"></i>Contact Us</a></li>
+            <li><a href="consult.html" class="toggle-key"><i class="fas fa-comments"></i>Consultations</a></li>
+            <li><a href="calorie.html" class="toggle-key"><i class="fas fa-calculator"></i>Calorie Count</a></li>
+            <li><a href="learn.html" class="toggle-key"><i class="fas fa-book"></i>Learn More</a></li> <!-- Added Learn More link -->
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>About BMI</h1>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='0.jpg') }}" alt="BMI bg">
+        </div>
+
+        <p>
+            Body Mass Index (BMI) is a person’s weight in kilograms divided by the square of height in meters. BMI is an inexpensive and easy screening method for weight category—underweight, healthy weight, overweight, and obesity.
+        </p>
+
+        <h2>How is BMI calculated?</h2>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='12.png') }}" alt="BMI bg">
+        </div>
+
+        <p>
+            BMI is calculated the same way for both adults and children. The calculation is based on the following formulas:
+        </p>
+
+        <p>
+            <strong>Kilograms and meters (or centimeters):</strong><br>
+            Formula: weight (kg) / [height (m)]<sup>2</sup>
+        </p>
+
+        <p>
+            <strong>Pounds and inches:</strong><br>
+            Formula: weight (lb) / [height (in)]<sup>2</sup> x 703
+        </p>
+
+        <!-- FAQs Section -->
+
+        <h3>FAQs about BMI</h3>
+
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='9.png') }}" alt="BMI bg">
+        </div>
+
+
+        <p>
+            <strong>1. Who invented BMI?</strong><br>
+            BMI is derived from a simple math formula created in the 1830s by Lambert Adolphe Jacques Quetelet, a Belgian astronomer, mathematician, statistician, and sociologist.
+        </p>
+
+        <p>
+            <strong>2. Why is BMI important?</strong><br>
+            BMI is an estimate of body fat and a good gauge of your risk for diseases that can occur with more body fat. The higher your BMI, the higher your risk for certain diseases such as heart disease, high blood pressure, type 2 diabetes, gallstones, breathing problems, and certain cancers.It is important as it is able to predict, with considerable accuracy, mortality and morbidity rates in populations
+        </p>
+
+        <p>
+            <strong>3. Is BMI used by doctors?</strong><br>
+            Yes, BMI is used by doctors.Obesity is a serious condition that increases a person's risk of developing a variety of health problems, including type 2 diabetes, heart disease, and stroke. Medical experts rely on BMI because it is simple, cheap, and generally accurate.
+        </p>
+
+        <p>
+            <strong>4. How accurate is BMI?</strong><br>
+            Studies have also shown that BMI can mislabel a person's health when compared to objective measures, like results from tests for cholesterol and blood-sugar levels. “Despite assumptions we've come to accept as facts, the evidence linking weight and health is inconsistent,” Russell says.       </p>
+
+        <p>
+            <strong>5. Does muscle mass affect BMI?</strong><br>
+            Muscle mass in itself does not affect BMI.        </p>
+        <p>
+            <strong>6. What is BMI limitations? </strong><br>
+            Factors such as age, sex, ethnicity, and muscle mass can influence the relationship between BMI and body fat. Also, BMI does not distinguish between excess fat, muscle, or bone mass, nor does it provide any indication of the distribution of fat among individuals.
+        </p>
+        <p>
+            <strong>7. Who is BMI not suitable for?</strong><br>
+            BMI doesn't take account of body composition, for example, muscle, fat, bone density. Sex and other factors which can impact your weight can also lead to an inaccurate reading. As such a BMI calculation is not a suitable measure for some people including children and young people under 18, pregnant women and athletes.</p>
+        <p>
+            <strong>8. What factors affect BMI?</strong><br>
+            Factors that affect the BMI of an individual</p>
+            <p>The individuals cannot control some of these factors such as developmental factors, genetic factors, gender, and age. Other factors that affect the Body Mass Index can be controlled such as, physical activity, diet, environmental factors, and social factors.</p>
+        <p>
+            <strong>9. What is the ideal BMI?</strong><br>
+            A BMI of less than 18.5 suggests underweight. A BMI of between 18.5 and 24.9 suggests a healthy weight range. A BMI of between 25 and 29.9 may indicate overweight. A BMI of 30 or higher may indicate obesity.</p>
+        <p>
+            <strong>10. Is Body Weight Genetic?</strong><br>
+            Most people probably have some genetic predisposition to obesity, depending on their family history and ethnicity. Moving from genetic predisposition to obesity itself generally requires some change in diet, lifestyle, or other environmental factors.
+        </p>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='5.jpg') }}" alt="BMI bg">
+        </div>
+    </div>
+    <!-- Learn More section -->
+    <div class="learn-more" id="learn-more-section">
+        <h3>Learn More</h3>
+        <ul>
+            <li><a href="https://www.cdc.gov/healthyliving/index.html" target="_blank">CDC Healthy Living</a></li>
+            <li><a href="https://www.nih.gov/health-information" target="_blank">NIH Health Information</a></li>
+            <li><a href="https://www.nhs.uk/live-well/" target="_blank">NHS Live Well</a></li>
+            <li><a href="https://www.webmd.com/healthy-aging/default.htm" target="_blank">WebMD Healthy Aging</a></li>
+        </ul>
+    </div>
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='86.jpg') }}">
+        </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BMI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom styles for theme switch */
+        .theme-switch {
+            display: inline-block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .theme-switch input[type="checkbox"] {
+            display: none;
+        }
+        .theme-switch label {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #ddd;
+            border-radius: 20px;
+        }
+        .theme-switch label::before {
+            content: '\f186'; /* Unicode for sun icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 5px;
+        }
+        .theme-switch input[type="checkbox"]:checked + label::before {
+            content: '\f186'; /* Unicode for sun icon */
+        }
+        .theme-switch input[type="checkbox"] + label::before {
+            content: '\f186'; /* Unicode for sun icon */
+        }
+        .theme-switch input[type="checkbox"]:checked + label::before {
+            content: '\f185'; /* Unicode for moon icon */
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme switch -->
+    <div class="theme-switch">
+        <input type="checkbox" id="toggle-theme" class="theme-switch-checkbox">
+        <label for="toggle-theme" class="theme-switch-label"></label>
+    </div>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.html" class="toggle-key"><i class="fas fa-home"></i>Home</a></li>
+            <li class="dropdown">
+                <a href="about.html" class="toggle-key"><i class="fas fa-info-circle"></i>About Us</a>
+            </li>
+            <li><a href="contact.html" class="toggle-key"><i class="fas fa-envelope"></i>Contact Us</a></li>
+            <li><a href="consult.html" class="toggle-key"><i class="fas fa-comments"></i>Consultations</a></li>
+            <li><a href="calorie.html" class="toggle-key"><i class="fas fa-calculator"></i>Calorie Count</a></li>
+            <li><a href="learn.html" class="toggle-key"><i class="fas fa-book"></i>Learn More</a></li> <!-- Added Learn More link -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Support and Services</h1>
+        <h2>Contact Us through any of the 3 following email IDs:</h2>
+        <p1><a href="mailto:kaurbhavnoor29@gmail.com">kaurbhavnoor29@gmail.com</a></p1>
+        <p2><a href="mailto:baljeet1636.be23@chitkara.edu.in">baljeet1636.be23@chitkara.edu.in</a></p2>
+        <p3><a href="mailto:bhawna1638.be23@chitkara.edu.in">bhawna1638.be23@chitkara.edu.in</a></p3>
+        <h3>Contact numbers:</h3>
+        <p4><a href="tel:+9198764******">98764*****</a></p4>
+        <p5><a href="tel:+9162834******">62834*****</a></p5>
+        <p6><a href="tel:+9197805******">97805*****</a></p6>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='22.png') }}">
+    </div>
+
+    <!-- JavaScript for theme toggle -->
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>

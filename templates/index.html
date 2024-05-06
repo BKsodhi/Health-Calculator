@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTH CALCULATORS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom styles for welcome message */
+        .welcome-message {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            font-weight: bolder;
+            color: #1b479d;
+        }
+        /* Styles for theme toggle */
+        .theme-switch {
+            display: inline-block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .theme-switch input[type="checkbox"] {
+            display: none;
+        }
+        .theme-switch label {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #ddd;
+            border-radius: 20px;
+        }
+        .theme-switch label::before {
+            content: '\f186'; /* Unicode for sun icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 5px;
+        }
+        .theme-switch input[type="checkbox"]:checked + label::before {
+            content: '\f185'; /* Unicode for moon icon */
+        }
+    </style>
+</head>
+<body class="theme-light">
+    <!-- Theme toggle -->
+    <div class="theme-switch">
+        <input type="checkbox" id="toggle-theme" class="theme-switch-checkbox">
+        <label for="toggle-theme" class="theme-switch-label"></label>
+        <script>// Theme switch code
+            const toggleSwitch = document.getElementById('toggle-theme');
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }
+            toggleSwitch.addEventListener('change', switchTheme, false);</script>
+    </div>
+
+    <!-- Welcome message -->
+    <p class="welcome-message" data-username="{% if username %}{{ username }}{% endif %}">
+    {% if username %}
+        Welcome,  {{ username }}!
+    {% else %}
+        Welcome!
+    {% endif %}
+    <button id="delete-btn" data-username="{% if username %}{{ username }}{% endif %}">Delete Account</button>
+    </p>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.html" class="toggle-key"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html" class="toggle-key"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="contact.html" class="toggle-key"><i class="fas fa-envelope"></i>Contact Us</a></li>
+            <li><a href="consult.html" class="toggle-key"><i class="fas fa-comments"></i>Consultations</a></li>
+            <li><a href="calorie.html" class="toggle-key"><i class="fas fa-calculator"></i>Calorie Count</a></li>
+            <li><a href="learn.html" class="toggle-key"><i class="fas fa-book"></i>Learn More</a></li> <!-- Added Learn More link -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='maxresdefault.jpg') }}" alt="BMI bg">
+        </div>
+        <div class="form-container">
+            <h1>BMI</h1>
+            <h2>Calculator</h2>
+            <div class="form">
+                <form id="bmiForm">
+                    <div class="unit-toggle">
+                        <label for="unit-toggle">UNITS: </label>
+                        <select id="unit-toggle">
+                            <option value="metric">Metric (m/kg)</option>
+                            <option value="imperial">Imperial (ft/in, lbs)</option>
+                        </select>
+                    </div>
+                    <input type="text" class="height" placeholder="Enter height">
+                    <input type="text" class="weight" placeholder="Enter weight">
+                    <input type="checkbox" id="save-info-checkbox">
+                    <label for="save-info-checkbox">Save my information</label>
+                    <input type="submit" value="Calculate">
+                </form>
+            </div>
+            <p class="privacy-disclaimer">Its completely your choice to save your info or not. We respect your privacy and confidentiality.</p>
+        </div>
+        <div class="popup">
+            <div id="adviceSection" style="display: none;">
+                <h3 id="adviceHeading">Advice</h3>
+                <p id="adviceText"></p>
+                <button id="closeAdvice">Close Advice</button>
+            </div>
+            <div class="bmi-score"></div>
+            <div class="bmi-text"></div>
+            <div id="bmiChartContainer">
+                <canvas id="bmiChart"></canvas>
+            </div>
+            <button class="close-btn">Close</button>
+            <div class="share-buttons">
+                <button id="shareFacebook">Share on Facebook</button>
+                <button id="shareTwitter">Share on Twitter</button>
+                <button id="shareInstagram">Share on Instagram</button>
+                <button id="showAdvice">Advice</button> <!-- New Advice button -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Learn More section -->
+    <!-- <div class="learn-more">
+        <h3>Learn More</h3>
+        <ul>
+            <li><a href="https://www.cdc.gov/healthyliving/index.html" target="_blank">CDC Healthy Living</a></li>
+            <li><a href="https://www.nih.gov/health-information" target="_blank">NIH Health Information</a></li>
+            <li><a href="https://www.nhs.uk/live-well/" target="_blank">NHS Live Well</a></li>
+            <li><a href="https://www.webmd.com/healthy-aging/default.htm" target="_blank">WebMD Healthy Aging</a></li>
+        </ul>
+    </div> -->
+
+    <!-- Dummy Ads -->
+    <div style="width: 300px; height: 550px; background-color: #f0f0f0; border: 1px solid #ccc; text-align: center; line-height: 250px; margin: 20px auto;">
+        <iframe src="https://www.codecademy.com/learn/learn-how-to-code" frameborder="0" height="550px"></iframe>
+        <span style="color: #555; font-size: 18px; font-weight: bold;"></span>
+    </div>
+    <div style="width: 300px; height: 550px; background-color: #f0f0f0; border: 1px solid #ccc; text-align: center; line-height: 250px; margin: 20px auto;">
+        <iframe src="https://www.mindmovies.com/?a_aid=29001&amp;a_bid=9a8236b9&msclkid=c8f4815809851657762ae4a9d3227826" frameborder="0" height="550px"></iframe>
+        <span style="color: #555; font-size: 18px; font-weight: bold;"></span>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library from CDN -->
+    <script>
+        // JavaScript for theme toggle
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>

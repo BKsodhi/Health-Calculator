@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.html" class="toggle-key"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html" class="toggle-key"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="contact.html" class="toggle-key"><i class="fas fa-envelope"></i>Contact Us</a></li>
+            <li><a href="consult.html" class="toggle-key"><i class="fas fa-comments"></i>Consultations</a></li>
+            <li><a href="calorie.html" class="toggle-key"><i class="fas fa-calculator"></i>Calorie Count</a></li>
+            <li><a href="learn.html" class="toggle-key"><i class="fas fa-book"></i>Learn More</a></li> <!-- Added Learn More link -->
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Our Team</h1>
+        <p1>We are 3 members in this team working for this BMI website.</p1>
+        <p2>Baljeet Singh</p2>
+        <p3>Bhavnoor Kaur</p3>
+        <p4>Bhawna Verma</p4>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='fee_team_members.jpg') }}" >
+            <h2>Our Team's Main Takeaway</h2>
+            <p5>Our team's main takeaway from developing an BMI calculator application is the power of technology in engaging and educating users. We've learned that combining HTML, CSS, and JavaScript allows us to create dynamic and interactive educational tools that can cater to a wide range of needs. Overall, the experience has shown us the potential of technology-driven educational tools and their impact on user engagement, knowledge retention, and overall user experience.</p5>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='8.jpg') }}">
+        </div>
+    </div>
+</body>
+</html>
